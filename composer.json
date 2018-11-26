@@ -1,0 +1,14 @@
+{
+    "name": "travozone/slack",
+    "description": "Notify slack with webhook",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "vophitruonganh",
+            "email": "vophitruonganh@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
