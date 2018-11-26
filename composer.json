@@ -3,6 +3,11 @@
     "description": "Notify slack with webhook",
     "type": "library",
     "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
     "authors": [
         {
             "name": "vophitruonganh",
