@@ -13,9 +13,8 @@ class SlackServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/config/slack.php' => config_path('slack.php'),
-        ]);
+        $source = realpath($raw = __DIR__.'/../config/slack.php') ?: $raw;
+        $this->publishes([$source => config_path('slack.php')]);
     }
 
     /**
