@@ -15,5 +15,8 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "curl/curl": "^2.1",
+        "ixudra/curl": "^6.16"
+    }
 }
