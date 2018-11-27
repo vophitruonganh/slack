@@ -3,6 +3,7 @@
 namespace Travozone\Slack\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Travozone\Slack\SlackService;
 
 class SlackServiceProvider extends ServiceProvider
 {
@@ -24,8 +25,8 @@ class SlackServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('Curl', function () {
-                return new CurlService();
+        $this->app->singleton('Slack', function () {
+                return new SlackService();
             }
         );
     }

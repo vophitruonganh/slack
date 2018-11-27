@@ -1,6 +1,6 @@
 <?php namespace Travozone\Slack;
 
-
+use Ixudra\Curl\Facades\Curl as Curl;
 class SlackService {
 
     /**
@@ -13,5 +13,21 @@ class SlackService {
 
         return $builder->to($url);
     }
+
+    public function message($message, $channel = 'debug')
+    {
+        if (is_array($message)) {
+            $message = json_encode($message);
+        }
+        $params = array(
+            'text' => $message,
+            "channel" => $channel,
+        );
+        return Curl::to(config('slack.hook'))
+            ->withData($params)
+            ->asJson(true)
+            ->post();
+    }
+
 
 }
