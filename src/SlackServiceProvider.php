@@ -24,6 +24,17 @@ class SlackServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('Travozone\Slack\Slack');
+        $this->app->singleton('Curl', function () {
+                return new CurlService();
+            }
+        );
+    }
+
+    /**
+     * @return array
+     */
+    public function provides()
+    {
+        return array('Slack');
     }
 }

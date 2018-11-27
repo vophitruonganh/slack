@@ -1,12 +1,19 @@
-<?php
+<?php namespace Travozone\Slack;
 
-namespace Travozone\Slack;
-use Ixudra\Curl\Facades\Curl;
-class Slack {
-    protected $webhook;
-    protected $channel;
 
-    static function send(){
+use stdClass;
+use Ixudra\Curl\Facades\Curl as Curl;
+class Builder {
+
+    /**
+     * notify slack with message
+     *
+     * @param [type] $meesage
+     * @param [type] $channel
+     * @return void
+     */
+    public function message($meesage, $channel)
+    {
         if (is_array($message)) {
             $message = json_encode($message);
         }
@@ -20,4 +27,5 @@ class Slack {
             ->asJson(true)
             ->post();
     }
+
 }
